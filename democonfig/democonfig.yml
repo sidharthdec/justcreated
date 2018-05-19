@@ -1,15 +1,28 @@
 example.property: "I AM IN THE DEFAULT"
-spring.jpa.database: "POSTGRESQL"
-spring.datasource.platform:  "postgres"
-spring.jpa.show-sql: "true"
-spring.database.driverClassName: "org.postgresql.Driver"
-spring.datasource.url: "jdbc:postgresql://localhost:5432/eagle_eye_local"
-spring.datasource.username: "postgres"
-spring.datasource.password: "p0stgr@s"
-spring.datasource.testWhileIdle: "true"
-spring.datasource.validationQuery: "SELECT 1"
-spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
-hibernate.hikari.transactionIsolation: "TRANSACTION_SERIALIZABLE"
-redis.server: "redis"
-redis.port: "6379"
-signing.key: "345345fsdfsf5345"
+# Spring Boot configuration
+spring:
+  profiles:
+    active: default
+# Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/eagle_eye_local?createDatabaseIfNotExist=true
+    username: postgres
+    password: p0stgr@s
+# JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: false
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+

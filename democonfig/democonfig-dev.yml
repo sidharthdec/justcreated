@@ -1,17 +1,28 @@
-tracer:
-property: I AM THE DEV
+example.property: "I AM IN THE DEV"
+# Spring Boot configuration
 spring:
-jpa:
-properties:
-hibernate:
-dialect: org.hibernate.dialect.PostgreSQLDialect
-database: POSTGRESQL
-datasource:
-platform: postgres
-url: jdbc:postgresql://database:5432/eagle_eye_local
-username: postgres
-password: p0stgr@s
-testWhileIdle: true
-validationQuery: SELECT 1
-show-sql: true
-driverClassName: org.postgresql.Driver
+  profiles:
+    active: default
+# Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/eagle_eye_local?createDatabaseIfNotExist=true
+    username: postgres
+    password: p0stgr@s
+# JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: false
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+
