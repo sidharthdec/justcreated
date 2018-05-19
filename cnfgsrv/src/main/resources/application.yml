@@ -13,6 +13,6 @@ spring:
       server:
         git:
           uri: https://github.com/sidharthdec/justcreated
-          searchPaths: configs/configs
+          searchPaths: config
           username: sidharthdec@gmail.com
           password: citi1792
