@@ -5,10 +5,12 @@ spring:
     active: default
 # Database
   datasource:
+    
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/eagle_eye_local?createDatabaseIfNotExist=true
     username: postgres
     password: tiger
+    
 # JPA properties
   jpa:
     hibernate:
