@@ -1,17 +1,17 @@
 tracer:
-property: "I AM THE PROD"
+property: I AM THE DEFAULT
 spring:
 jpa:
 properties:
 hibernate:
-dialect: "org.hibernate.dialect.PostgreSQLDialect"
-database: "POSTGRESQL"
+dialect: org.hibernate.dialect.PostgreSQLDialect
+database: POSTGRESQL
 datasource:
-platform: "postgres"
-url: "jdbc:postgresql://database:5432/eagle_eye_local"
-username: "postgres"
-password: "p0stgr@s"
-testWhileIdle: "true"
-validationQuery: "SELECT 1"
-show-sql: "true"
-driverClassName: "org.postgresql.Driver"
+platform: postgres
+url: jdbc:postgresql://database:5432/eagle_eye_local
+username: postgres
+password: p0stgr@s
+testWhileIdle: true
+validationQuery: SELECT 1
+show-sql: true
+driverClassName: org.postgresql.Driver
