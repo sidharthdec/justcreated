@@ -1,17 +1,14 @@
 server:
-  port: 8081 
-
+  port: 8081
 spring:
-  profiles:
-    active: native
-  cloud:
+   cloud:
     config:
       server:
         git:
-          uri: "https://github.com/sidharthdec/justcreated/"
-          search-paths: democonfig
-          username: "sidharthdec@gmail.com"
-          password: "citi1792"
+          uri: https://github.com/sidharthdec/justcreated/
+          searchPaths: democonfig
+          username: sidharthdec@gmail.com
+          password: citi1792
            
             
 
