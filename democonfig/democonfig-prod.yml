@@ -1,5 +1,5 @@
 tracer:
-property: I AM THE DEFAULT
+property: I AM THE PROD
 spring:
 jpa:
 properties:
