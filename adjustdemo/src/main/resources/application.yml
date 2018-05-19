@@ -1,0 +1,11 @@
+server:
+  port: 8182
+  
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone : http://localhost:8765/eureka/
+          
