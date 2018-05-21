@@ -1,18 +1,43 @@
 package com.example.demo.model;
 
-public class FileDetails {
-	
-	
-	private String filePath;
+import java.io.Serializable;
 
-	public String getFilePath() {
-		return filePath;
-	}
-
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
-	}
+public class FileDetails implements Serializable{
 	
+	private String text;
+    private int priority;
+    private boolean secret;
+
+    // Default constructor is needed to deserialize JSON
+    public FileDetails() {
+    }
+
+    public FileDetails(String text, int priority, boolean secret) {
+        this.text = text;
+        this.priority = priority;
+        this.secret = secret;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public boolean isSecret() {
+        return secret;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomMessage{" +
+                "text='" + text + '\'' +
+                ", priority=" + priority +
+                ", secret=" + secret +
+                '}';
+    }
 	
 
 }
